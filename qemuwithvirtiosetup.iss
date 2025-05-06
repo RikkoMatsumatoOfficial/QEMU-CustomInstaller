@@ -85,7 +85,7 @@ procedure InitializeWizard();
 begin
     ExtractTemporaryFile('YatogamiFumaPITA.mp3');
     ExtractTemporaryFile('MacOSMetalV.cjstyles');
-    LoadSkin('{tmp}/MacOSMetalV.cjstyles', 'NORMALMETALV.ini');
+    LoadSkin(ExpandConstant('{tmp}\MacOSMetalV.cjstyles'), '');
     mp3Name := ExpandConstant('{tmp}\YatogamiFumaPITA.mp3');
     BASS_Init(-1, 48000, 0, 0, 0);
     mp3Handle := BASS_StreamCreateFile(FALSE, PAnsiChar(mp3Name), 0, 0, 0, 0, BASS_SAMPLE_LOOP);
@@ -101,7 +101,7 @@ begin
 end;
 
 [Files]
-Source: "MacOSMetalV.cjstyles"; DestDir: "{tmp}"; Flags: ignoreversion
+Source: "MacOSMetalV.cjstyles"; DestDir: "{tmp}"; Flags: dontcopy ignoreversion
 Source: "YatogamiFumaPITA.mp3"; DestDir: "{tmp}"; Flags: dontcopy ignoreversion
 Source: "C:\Include_DLLInnoSetup\bass.dll"; DestDir: "{tmp}"; Flags: dontcopy ignoreversion
 Source: "C:\Include_DLLInnoSetup\ISSkinExU.dll"; DestDir: "{tmp}"; Flags: dontcopy ignoreversion
